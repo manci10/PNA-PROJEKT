@@ -28,10 +28,13 @@ void loop()
       digitalWrite(zelena, LOW);
       int potVal = analogRead(pot);
       int hitrost = 1023 - potVal;
-      digitalWrite(nmos, HIGH);
-      delayMicroseconds(hitrost);
+      map(potVal, 0, 1023, 0, 255);
+      analogWrite(nmos, potVal);
+    /* delayMicroseconds(hitrost);
       digitalWrite(nmos, LOW);
-      delayMicroseconds(potVal);
+      delayMicroseconds(potVal);*/
+      Serial.println(potVal);
+      delay(50);
     }
     else if (digitalRead(swMode) == LOW) //avtomatsko
     {
@@ -47,17 +50,18 @@ void loop()
    }
       else if(temperatura>25 && temperatura<50)
       {
-    analogWrite(nmos,100); //srednja hitrost
+      analogWrite(nmos,100); //srednja hitrost
       }
       else
       {
-    analogWrite(nmos,255); //polna hitrost
+       analogWrite(nmos,255); //polna hitrost
    }
     }
   }
   else
   {
-  digitalWrite(nmos, LOW);
-  digitalWrite(zelena, LOW);
+    analogWrite(nmos, 0);
+    digitalWrite(zelena, LOW);
+    digitalWrite(rdeca, LOW);
   }
 }
