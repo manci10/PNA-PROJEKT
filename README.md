@@ -18,6 +18,5 @@ Ob vklopu stikala 1 naj se ventilacija (motorček preko tranzistorja) vključi i
 
 ![IMG_0300](https://user-images.githubusercontent.com/129843992/232754633-573c3f1b-dbd6-4525-a6d2-a31da007538f.jpg)
 
-## VIDEO
 
 
